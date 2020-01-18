@@ -13,7 +13,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    'comma-dangle': ['error', 'always'],
+    'comma-dangle': ['error', 'always-multiline'],
     'nuxt/no-cjs-in-config': 'off',
     'semi': ['error', 'always'],
   },

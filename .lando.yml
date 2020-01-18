@@ -1,0 +1,31 @@
+name: mmm
+excludes:
+  - node_modules
+proxy:
+  app:
+    - mmm.lndo.site:3000
+services:
+  app:
+    type: node:10
+    build:
+      - yarn install
+    command: yarn run dev
+    port: 3000
+  platform:
+    type: php:7.3
+    via: cli
+    build:
+      - mkdir -p /var/www/.platformsh/bin
+      - curl -fsSL -o /var/www/.platformsh/bin/platform https://github.com/platformsh/platformsh-cli/releases/download/v3.40.4/platform.phar
+      - chmod ug+x /var/www/.platformsh/bin/platform
+tooling:
+  platform:
+    service: platform
+    description: Run Platform CLI commands
+    cmd: /var/www/.platformsh/bin/platform
+  yarn:
+    service: app
+  node:
+    service: app
+  vuepress:
+    service: app
