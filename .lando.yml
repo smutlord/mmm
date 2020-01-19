@@ -1,6 +1,8 @@
 name: mmm
 excludes:
   - node_modules
+env_file:
+  - .env.lando
 proxy:
   app:
     - mmm.lndo.site:3000
@@ -8,8 +10,9 @@ services:
   app:
     type: node:10
     build:
+      - cp -n /app/.env.example /app/.env.lando
       - yarn install
-    command: yarn app:dev --hostname 0.0.0.0 --port 3000
+    command:  yarn app:dev --hostname 0.0.0.0 --port 3000
     port: 3000
   platform:
     type: php:7.3

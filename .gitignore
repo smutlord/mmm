@@ -90,4 +90,4 @@ sw.*
 *.swp
 
 # Lando
-lando.env
+.env.lando

@@ -16,5 +16,6 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'nuxt/no-cjs-in-config': 'off',
     'semi': ['error', 'always'],
+    'space-before-function-paren': ['error', 'never'],
   },
 };
