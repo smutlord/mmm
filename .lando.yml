@@ -9,7 +9,7 @@ services:
     type: node:10
     build:
       - yarn install
-    command: yarn run dev
+    command: yarn app:dev --hostname 0.0.0.0 --port 3000
     port: 3000
   platform:
     type: php:7.3
