@@ -17,10 +17,9 @@
     </g>
   </svg>
 </template>
-<style>
-.NuxtLogo {
-  animation: 1s appear;
-}
+<style lang="stylus" scoped>
+.NuxtLogo
+  animation: 10s appear;
 
 @keyframes appear {
   0% {
