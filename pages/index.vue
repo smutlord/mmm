@@ -1,39 +1,39 @@
 <template>
   <div class="container">
     <div>
-      <logo />
+      <ApexChart
+        :options="chartOptions"
+        :series="series"
+        width="500"
+        type="bar"
+      />
       <h1 class="title">
         HI NATASHA
       </h1>
       <h2 class="subtitle">
         Riding dat wave
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue';
-
 export default {
-  components: {
-    Logo,
+  data() {
+    return {
+      chartOptions: {
+        chart: {
+          id: 'vuechart-example',
+        },
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+        },
+      },
+      series: [{
+        name: 'series-1',
+        data: [30, 40, 35, 50, 49, 60, 70, 91],
+      }],
+    };
   },
 };
 </script>
@@ -60,6 +60,4 @@ export default {
   color: #526488
   word-spacing: 5px
   padding-bottom: 15px
-.links
-  padding-top: 15px
 </style>
